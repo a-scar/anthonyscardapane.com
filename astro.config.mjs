@@ -5,11 +5,13 @@ import node from "@astrojs/node";
 
 // https://astro.build/config
 export default defineConfig({
-  site: "https://anthonyscardapane.com",
+  site: "https://anthonyscardapane.com/",
   output: "server",
   integrations: [mdx(), svelte()],
   markdown: {
-    shikiConfig: { theme: "dracula" },
+    shikiConfig: {
+      theme: "dracula",
+    },
     rehypePlugins: [
       [
         "rehype-external-links",

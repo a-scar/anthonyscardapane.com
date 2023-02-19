@@ -1,5 +1,5 @@
 {
-  "name": "astro-blog-template",
+  "name": "anthonyscardapane.com",
   "version": "0.0.1",
   "private": true,
   "scripts": {
@@ -11,15 +11,10 @@
   },
   "devDependencies": {
     "@astrojs/mdx": "^0.8.3",
-    "@astrojs/svelte": "^1.0.0",
-    "astro": "^1.7.2",
+    "@astrojs/svelte": "^2.0.2",
+    "astro": "^2.0.14",
     "nodemon": "^2.0.20",
     "prettier": "^2.7.1",
-    "prettier-plugin-astro": "^0.7.0",
     "rehype-external-links": "^2.0.0"
-  },
-  "dependencies": {
-    "@astrojs/node": "^3.1.0",
-    "astro-feather-icons": "^1.0.2"
   }
 }
