@@ -1,0 +1,97 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import NavLink from "../components/NavLink.svelte";
+
+const title = "Home";
+const description = "Landing page Anthony Scardapane personal website and blog";
+const permalink = Astro.site?.href;
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  permalink={permalink as string}
+>
+  <div class="home-container">
+    <div class="home-copy">
+      <div></div>
+
+      <h1>Anthony Scardapane</h1>
+
+      <p>Hey! Thanks for visiting my website ❤️</p>
+
+      <p>
+        My names Anthony and I write code, build software, and architect systems
+        that put it all together. Working at Cisco building <a
+          href="https://www.cisco.com/site/us/en/services/cx-cloud/index.html#tabs-ca9b217826-item-1b113ceb83-tab"
+          target="_blank">CX Cloud</a
+        >.
+      </p>
+
+      <p>
+        My favorite task is taking an idea and making it come to life in
+        software. I continually work on building the skills that will make me
+        better at doing that.
+      </p>
+
+      <p>
+        Besides tech, I tinker with house projects, cook, hang with my family,
+        play board games, and occasionally dust off the old skateboard.
+      </p>
+
+      <hr />
+
+      <ul>
+        <li>
+          Check out my <a href="/blog">Blog</a> for recent posts and tech articles.
+        </li>
+        <li>
+          Find me on the interwebs at
+          <a href="https://twitter.com/a_scardapane" target="_blank">Twitter</a>
+          or
+          <a href="https://github.com/a-scar" target="_blank">Github</a>.
+        </li>
+      </ul>
+    </div>
+  </div>
+</BaseLayout>
+
+<style>
+  .home-container {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    margin: 2em 0;
+    min-height: 400px;
+    margin: 0 auto;
+    max-width: 55em;
+    width: 100%;
+  }
+
+  .home-copy {
+    flex: 1;
+    padding: 0 1em;
+  }
+
+  .home-copy h1 {
+    font-weight: 700;
+    margin-bottom: 0.5em;
+    line-height: 1.3;
+  }
+
+  .home-copy p {
+    font-size: 1.2em;
+  }
+
+  @media (max-width: 800px) {
+    .home-container {
+      flex-direction: column;
+    }
+
+    .home-copy {
+      flex: 0;
+      padding-bottom: 2em;
+      text-align: center;
+    }
+  }
+</style>

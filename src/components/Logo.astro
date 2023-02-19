@@ -1,0 +1,31 @@
+<style>
+  img {
+    display: block;
+    width: 55px;
+  }
+
+  .icon {
+    transition: transform 200ms;
+  }
+
+  .icon-link:hover .icon {
+    transform: translateY(-5px) rotate(5deg);
+    will-change: transform;
+  }
+
+  @media (max-width: 480px) {
+    .icon {
+      transition: none;
+    }
+
+    .icon-link:hover .icon {
+      transform: none;
+    }
+  }
+</style>
+
+<a class="icon-link" href="/">
+  <article class="icon">
+    <img alt="Home Icon" src="/assets/home.webp" />
+  </article>
+</a>

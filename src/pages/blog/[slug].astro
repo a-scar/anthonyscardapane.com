@@ -1,0 +1,59 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import Bio from "../../components/Bio.astro";
+
+const posts = await Astro.glob("../../data/blog-posts/*.md");
+const { slug } = Astro.params;
+
+const page = posts
+  .map((post) => ({
+    ...post,
+    slug: post.file.split("/").pop()?.split(".").shift(),
+  }))
+  .find((page) => page.slug === slug);
+
+if (!page) return Astro.redirect("/404");
+const { frontmatter, Content } = page;
+const permalink = `${Astro.site?.href}${slug}`;
+---
+
+<BaseLayout
+  title={frontmatter.title}
+  description={frontmatter.description}
+  permalink={permalink}
+  current="blog"
+>
+  <header>
+    <p>{frontmatter.publishDate}</p>
+    <h1>{frontmatter.title}</h1>
+  </header>
+  <div class="container">
+    <article class="content">
+      <Content />
+    </article>
+    <hr />
+    <Bio />
+  </div>
+</BaseLayout>
+
+<style>
+  header {
+    text-align: center;
+  }
+
+  header h1 {
+    margin-bottom: 0.7em;
+  }
+
+  header p {
+    color: var(--text-secondary);
+    text-transform: uppercase;
+    font-family: var(--font-family-sans);
+    font-weight: 600;
+  }
+
+  header hr {
+    min-width: 100px;
+    width: 30%;
+  }
+</style>

@@ -1,0 +1,6 @@
+---
+import NavBar from "./NavBar.svelte";
+const { current = "" } = Astro.props;
+---
+
+<NavBar current={current} client:load />
