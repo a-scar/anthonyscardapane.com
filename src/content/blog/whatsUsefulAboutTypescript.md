@@ -2,6 +2,7 @@
 title: What's useful about Typescript?
 description: How changing your mental model can help understand Typescript
 publishDate: January 29, 2022
+id: 1
 ---
 
 Something important to understand right out of the gate is that Typescript is not an entirely different language than Javascript. If you take an error free .js file and change the extension to .ts the result of running the file will be equivalent. However, a .ts file is not a valid .js file. This is because Typescript is a superset of Javascript; which is a fancy way of saying it has all the language features of Javascript plus extra "stuff" specific to Typescript. All those "extra language features" Typescript provides would cause a Javascript program to have syntax errors. This will make a bit more sense shortly once we discuss what Typescript is actually doing with our code.
@@ -34,7 +35,7 @@ interface Skateboard {
   deck: string;
   wheels: string;
   trucks: string;
-};
+}
 ```
 
 Awesome! Now that we have this interface described, we can re-write our Javascript function above using Typescript. Let's utilize the Skateboard interface by assigning a type to the parameter in our function from earlier. The way a type is assigned to a value in Typescript is by using a colon. Here's how it would look:
@@ -45,7 +46,7 @@ function printSkateboardPart(skateboard: Skateboard) {
 }
 ```
 
-🥳 Congrats, we just wrote our first Typescript function! *_We could also add a return type to this function, although most TS style guides leave that up to the code author. For now, we will ignore this for simplicity._
+🥳 Congrats, we just wrote our first Typescript function! \*_We could also add a return type to this function, although most TS style guides leave that up to the code author. For now, we will ignore this for simplicity._
 
 With the added type annotation, Typescript can now perform type checking and warn us when someone tries to call the function with an argument that does not fit into the "Skateboard" domain. Type checking is one of the most valuable features of Typescript. Here is how it would help protect us from bugs while we code:
 
@@ -58,19 +59,19 @@ printSkateboardPart("skateboard");
 
 ```ts
 interface Skateboard {
-    deck: string;
-    wheels: string;
-    trucks: string;
+  deck: string;
+  wheels: string;
+  trucks: string;
 }
 
 function printSkateboardPart(skateboard: Skateboard) {
-    console.log(skateboard.wheels);
+  console.log(skateboard.wheels);
 }
 
 printSkateboardPart({
-    deck: 'Baker',
-    wheels: 'Spitfire',
-    trucks: 'Independent'
+  deck: "Baker",
+  wheels: "Spitfire",
+  trucks: "Independent",
 });
 
 //Spitfire
@@ -85,18 +86,18 @@ Before moving on, I think it's important to understand how this is actually work
 > npx tsc skateboard.ts         //compiles typescript and generates a skateboard.js file
 ```
 
-*_In order to use npm and npx you must download [Node.js](https://nodejs.org)_
+\*_In order to use npm and npx you must download [Node.js](https://nodejs.org)_
 
 After running the compile step, you should see a new file in your project called "skateboard.js" which should look like this:
 
 ```js
 function printSkateboardPart(skateboard) {
-    console.log(skateboard.wheels);
+  console.log(skateboard.wheels);
 }
 printSkateboardPart({
-    deck: 'Baker',
-    wheels: 'Spitfire',
-    trucks: 'Independent'
+  deck: "Baker",
+  wheels: "Spitfire",
+  trucks: "Independent",
 });
 ```
 

@@ -1,12 +1,14 @@
 ---
-title: 'NgZone, Change Detection, & Reactivity in Angular'
+title: "NgZone, Change Detection, & Reactivity in Angular"
 description: What is NgZone and how does it work within Angular? What might the future hold for reactivity?
 publishDate: Septemeber 13, 2022
-draft: true
+id: 4
+isDraft: true
 ---
+
 ## Forward
 
-***At the playground***
+**_At the playground_**
 
 `Me: "Hey zone.js do you wanna be friends?"`
 `Zone.js: "Haha sure I'm playing Sonic; Do you wanna be Tails?"`
@@ -15,11 +17,11 @@ draft: true
 `Me: "Ok fine, you can be Sonic and that rock on the ground"`
 `Zone.js: Runs away in a Sonic like fashion, never speaking to me again`
 
-***Later that day...***
+**_Later that day..._**
 
 `Me: ugh why did I say zone.js could pretend to be a rock. I'm such an asshole.`
 
-***Later that night in bed...***
+**_Later that night in bed..._**
 
 `Me (uncontrollably sobbing): I could have said anything! And I said ROCK! I'm sorry zone.js I should have said Knuckles, you don't deserve me as a friend 😭`
 
@@ -32,5 +34,3 @@ Today we're gonna drink a big ol' glass of zone.js and let it's warmth envelop a
 First, I'm going to go drink some milk because for some reason that "big ol' glass" sentence has me craving 20oz of whole milk.
 
 ## Chapter 1: Zone.js and why it exists
-
-

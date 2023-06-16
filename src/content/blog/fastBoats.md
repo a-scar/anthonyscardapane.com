@@ -2,6 +2,7 @@
 title: "Fast boat slow shore"
 description: A song I wrote
 publishDate: February 16, 2022
+id: 2
 ---
 
 <h2>fast boat, slow shore</h2>
@@ -36,4 +37,3 @@ publishDate: February 16, 2022
 <p>slow down let's hope it's enough</p>
 
 <p>I think I'm ok, you're ok</p>
-

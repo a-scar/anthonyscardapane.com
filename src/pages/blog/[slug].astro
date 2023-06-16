@@ -1,21 +1,9 @@
----
-import BaseLayout from "../../layouts/BaseLayout.astro";
-import Bio from "../../components/Bio.astro";
-
-const posts = await Astro.glob("../../data/blog-posts/*.md");
-const { slug } = Astro.params;
-
-const page = posts
-  .map((post) => ({
-    ...post,
-    slug: post.file.split("/").pop()?.split(".").shift(),
-  }))
-  .find((page) => page.slug === slug);
-
-if (!page) return Astro.redirect("/404");
-const { frontmatter, Content } = page;
-const permalink = `${Astro.site?.href}${slug}`;
----
+import {getEntryBySlug} from "astro:content"
+import BaseLayout from "../../layouts/BaseLayout.astro"; import Bio from "../../components/Bio.astro";
+const posts = await Astro.glob("../../data/blog-posts/*.md"); const { slug } = Astro.params;
+if (!slug) { return Astro.redirect("/404"); } const entry = await getEntryBySlug("blog",
+slug); if (!entry) { return Astro.redirect("/404"); } const permalink = `${Astro.site?.href}${slug}`;
+const { Content } = await entry.render();
 
 <BaseLayout
   title={frontmatter.title}

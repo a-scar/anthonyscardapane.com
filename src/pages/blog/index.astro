@@ -1,19 +1,10 @@
----
-import BaseLayout from "../../layouts/BaseLayout.astro";
-
-const title = "Blog";
-const description = "Latest articles.";
-const permalink = `${Astro.site?.href}blog`;
-
-let allPosts = await Astro.glob("../../data/blog-posts/*.md");
-allPosts = allPosts
-  .filter((post) => !post.frontmatter.draft)
-  .sort(
-    (a, b) =>
-      new Date(b.frontmatter.publishDate).valueOf() -
-      new Date(a.frontmatter.publishDate).valueOf()
-  );
----
+import {getCollection} from "astro:content"
+export const prerender = true; import BaseLayout from "../../layouts/BaseLayout.astro";
+const title = "Blog"; const description = "Latest articles."; const permalink = `${Astro.site?.href}blog`;
+const title = "Blog"; const description = "Blog posts"; const permalink = Astro.site?.href;
+function sortPostIdHightoLow(a: number, b: number): number { return b - a; } const
+blogEntries = await getCollection("blog", ({ data }) => { return data.isDraft !==
+true; });
 
 <BaseLayout
   title={title}
@@ -24,8 +15,11 @@ allPosts = allPosts
   <div class="container">
     <h1>posts</h1>
     {
-      allPosts.map((post, index) => {
+      blogEntries.map((post, index) => {
         const href = `/blog/${post.file.split("/").pop()?.split(".").shift()}`;
+        console.log("blog href", href);
+        console.log("allPosts", allPosts.length);
+
         return (
           <div>
             {index !== 0 && <hr />}

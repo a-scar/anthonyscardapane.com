@@ -1,7 +1,7 @@
 import { defineConfig } from "astro/config";
 import svelte from "@astrojs/svelte";
 import mdx from "@astrojs/mdx";
-import node from "@astrojs/node";
+import vercel from "@astrojs/vercel/serverless";
 
 // https://astro.build/config
 export default defineConfig({
@@ -21,7 +21,7 @@ export default defineConfig({
       ],
     ],
   },
-  adapter: node({
-    mode: "standalone",
+  adapter: vercel({
+    analytics: true,
   }),
 });
