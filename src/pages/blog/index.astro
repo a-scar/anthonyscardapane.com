@@ -1,18 +1,19 @@
 ---
+import { getCollection } from "astro:content";
 import BaseLayout from "../../layouts/BaseLayout.astro";
+import Card from "../../components/Card.svelte";
 
 const title = "Blog";
-const description = "Latest articles.";
-const permalink = `${Astro.site?.href}blog`;
+const description = "Blog posts";
+const permalink = Astro.site?.href;
 
-let allPosts = await Astro.glob("../../data/blog-posts/*.md");
-allPosts = allPosts
-  .filter((post) => !post.frontmatter.draft)
-  .sort(
-    (a, b) =>
-      new Date(b.frontmatter.publishDate).valueOf() -
-      new Date(a.frontmatter.publishDate).valueOf()
-  );
+function sortPostIdHightoLow(a: number, b: number): number {
+  return b - a;
+}
+
+const blogEntries = await getCollection("blog", ({ data }) => {
+  return data.isDraft !== true;
+});
 ---
 
 <BaseLayout
@@ -21,47 +22,32 @@ allPosts = allPosts
   permalink={permalink}
   current="blog"
 >
-  <div class="container">
-    <h1>posts</h1>
+  <h1>blog</h1>
+  <div class="grid">
     {
-      allPosts.map((post, index) => {
-        const href = `/blog/${post.file.split("/").pop()?.split(".").shift()}`;
-        return (
-          <div>
-            {index !== 0 && <hr />}
-            <div class="post-item">
-              <h2>
-                <a href={href}>{post.frontmatter.title}</a>
-              </h2>
-              <p>{post.frontmatter.description}</p>
-              <div class="post-item-footer">
-                <span class="post-item-date">
-                  — {post.frontmatter.publishDate}
-                </span>
-              </div>
-            </div>
-          </div>
-        );
-      })
+      blogEntries
+        .sort((a, b) => sortPostIdHightoLow(a.data.id, b.data.id))
+        .map((post) => {
+          return <Card post={post} />;
+        })
     }
   </div>
 </BaseLayout>
 
 <style>
-  h2,
-  .post-item-footer {
-    font-family: var(--font-family-sans);
-    font-weight: 700;
+  .grid {
+    --min-column-width: min(320px, 100%);
+    display: grid;
+    grid-template-columns: repeat(
+      auto-fill,
+      minmax(var(--min-column-width), 1fr)
+    );
+    gap: 16px;
+    padding: 16px;
   }
 
-  .post-item-date {
-    color: var(--text-secondary);
-    text-align: left;
-    text-transform: uppercase;
-    margin-right: 16px;
-  }
-
-  hr {
-    margin: 30px auto;
+  h1 {
+    margin-top: 56px;
+    font-size: 2rem;
   }
 </style>

@@ -9,7 +9,6 @@ export interface Props {
 }
 
 const { title, description, permalink } = Astro.props;
-// const socialUrl = Astro.site + "assets/social.png";
 ---
 
 <!-- Global Metadata -->
@@ -30,15 +29,12 @@ const { title, description, permalink } = Astro.props;
 <meta property="og:url" content={permalink} />
 <meta property="og:title" content={title} />
 <meta property="og:description" content={description} />
-<!-- <meta property="og:image" content={socialUrl} /> -->
 
 <!-- Twitter -->
 <meta property="twitter:url" content={permalink} />
 <meta property="twitter:title" content={title} />
 <meta property="twitter:description" content={description} />
-<!-- <meta property="twitter:image" content={socialUrl} /> -->
 
-<!-- This is intentionally inlined to avoid FOUC -->
 <script>
   const root = document.documentElement;
   const theme = localStorage.getItem("theme");
