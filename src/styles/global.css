@@ -2,7 +2,8 @@
   --background-body: hsl(0deg, 0%, 95%);
   --text-main: hsl(202, 27%, 14%);
   --text-secondary: hsl(204, 6%, 35%);
-  --primary-color: hsl(258, 53%, 45%);
+  --primary-color: hsl(230, 57%, 53%);
+  --secondary-color: hsla(300, 33%, 82%, 0.62);
   --font-family-serif: Merriweather, serif;
   --font-family-sans: 'Fira Sans', sans-serif;
 }
@@ -11,8 +12,8 @@
   --background-body: hsl(210, 3%, 13%);
   --text-main: hsl(0, 0%, 100%);
   --text-secondary: hsl(0, 0%, 80%);
-
-  --primary-color: hsl(148, 83%, 45%);
+  --primary-color: hsl(153, 100%, 50%);
+  --secondary-color: #282A36;
 }
 
 *,
@@ -24,7 +25,7 @@
 body {
   margin: 0;
   font-family: var(--font-family-serif);
-  font-size: 16px;
+  font-size: 14px;
   line-height: 1.6;
   background-color: var(--background-body);
   color: var(--text-main);
@@ -48,10 +49,6 @@ h1 {
   margin: 0 0 1em 0;
 }
 
-h2 {
-  margin: 1.6em 0 0 0;
-  font-size: 1.8em;
-}
 
 h3 {
   font-size: 1.5em;
@@ -71,13 +68,13 @@ h6 {
 
 p,
 ol {
-  font-size: 1.3rem;
+  font-size: 1rem;
   line-height: 1.75em;
   margin: 1.2em 0;
 }
 
 ul {
-  font-size: 1.3rem;
+  font-size: 1rem;
   margin: 5px;
 }
 
@@ -89,15 +86,7 @@ ul {
 }
 
 a {
-  color: var(--primary-color);
-  text-decoration: none;
-}
-
-a:hover {
-  text-decoration-thickness: 0.15rem;
-  text-underline-offset: 7px;
-  text-decoration: underline;
-  text-decoration-color: var(--primary-color);
+  color: var(--text-secondary);
 }
 
 img {
@@ -176,21 +165,17 @@ blockquote footer {
   display: inline-flex;
   align-items: center;
   height: 100%;
-  padding: 0.33em 0.67em;
-  padding-top: 8px;
+  padding: 8px 0.67em 0.33em;
   margin-left: 10px;
   gap: 0.6em;
   border-radius: 99em;
-  background-color: var(--theme-code-inline-bg);
 }
 
 .theme-toggle > label:focus-within {
   outline: 2px solid transparent;
-  box-shadow: 0 0 0 0.08em var(--theme-accent), 0 0 0 0.12em white;
 }
 
 .theme-toggle > label {
-  color: var(--theme-code-inline-text);
   position: relative;
   display: flex;
   align-items: center;
@@ -200,7 +185,6 @@ blockquote footer {
 }
 
 .theme-toggle .checked {
-  color: var(--theme-accent);
   opacity: 1;
 }
 
@@ -232,7 +216,6 @@ input[name='theme-toggle'] {
   p,
   ul,
   ol {
-    font-size: 1.2rem;
     margin: 1em 0;
   }
 

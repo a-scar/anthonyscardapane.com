@@ -1,6 +1,6 @@
 ---
-title: What's useful about Typescript?
-description: How changing your mental model can help understand Typescript
+title: What's useful about Typescript
+description: Why does this exist? 
 publishDate: January 29, 2022
 id: 1
 ---

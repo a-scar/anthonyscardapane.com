@@ -6,15 +6,6 @@ id: 3
 snippet: Typescript can get a bit tricky as we start diving into some of the more advanced Types such as Unions, Intersections, and Mapped Types. This is when creating a solid foundation for how we think about Types can save a lot of frustration. A great way to think about how Types work, is to consider what the "domain" of a Type consists of.
 ---
 
-- [Type Domains](#type-domains)
-- [Creating Unions](#creating-unions)
-- [Working with Unions](#working-with-unions)
-  - [Narrowing](#narrowing)
-  - [Extending](#extending)
-
----
-
-# <a name="Type Domains"></a>Type Domains
 
 Typescript can get a bit tricky as we start diving into some of the more advanced Types such as Unions, Intersections, and Mapped Types. This is when creating a solid foundation for how we think about Types can save a lot of frustration. A great way to think about how Types work, is to consider what the "domain" of a Type consists of. In other words, all the possible values that could be assigned to a given variable. Let's start with dissecting one of Typescripts primitive Types and expand from there.
 
@@ -110,8 +101,9 @@ userId = 12345 //reassign userId to a number
 
 ```
 
-## Narrowing
+[//]: # (## Narrowing)
 
-## Extending
+[//]: # ()
+[//]: # (## Extending)
 
 still writing...(Chatting with George R. R. Martin & Patrick Rothfuss)

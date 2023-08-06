@@ -1,6 +1,4 @@
 ---
-export const prerender = true;
-
 import BaseLayout from "../layouts/BaseLayout.astro";
 
 const title = "Home";
@@ -15,15 +13,17 @@ const permalink = Astro.site?.href;
 >
   <div class="home-container">
     <div class="home-copy">
-      <div></div>
-
-      <h1>Anthony Scardapane</h1>
-
-      <p>Hey! Thanks for visiting my website ❤️</p>
+      <div class="header">
+        <p>Hey there, I'm</p>
+        <h1>
+          Anthony
+          <span class="last-name">Scardapane</span>
+        </h1>
+      </div>
 
       <p>
-        My names Anthony and I write code, build software, and architect systems
-        that put it all together. Working at Cisco building <a
+        I write code, build software, and architect systems that put it all
+        together. Working at Cisco building <a
           href="https://www.cisco.com/site/us/en/services/cx-cloud/index.html#tabs-ca9b217826-item-1b113ceb83-tab"
           target="_blank">CX Cloud</a
         >.
@@ -58,11 +58,24 @@ const permalink = Astro.site?.href;
 </BaseLayout>
 
 <style>
+  .header {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .header h1 {
+    margin: 0;
+  }
+
+  .last-name {
+    font-style: italic;
+  }
+
   .home-container {
     align-items: center;
     display: flex;
     justify-content: center;
-    margin: 2em 0;
     min-height: 400px;
     margin: 0 auto;
     max-width: 55em;
@@ -72,16 +85,7 @@ const permalink = Astro.site?.href;
   .home-copy {
     flex: 1;
     padding: 0 1em;
-  }
-
-  .home-copy h1 {
-    font-weight: 700;
-    margin-bottom: 0.5em;
-    line-height: 1.3;
-  }
-
-  .home-copy p {
-    font-size: 1.2em;
+    margin-top: 48px;
   }
 
   @media (max-width: 800px) {
@@ -92,7 +96,6 @@ const permalink = Astro.site?.href;
     .home-copy {
       flex: 0;
       padding-bottom: 2em;
-      text-align: center;
     }
   }
 </style>

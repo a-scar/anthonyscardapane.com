@@ -21,7 +21,7 @@
     text-decoration: none;
     color: inherit;
     font-weight: 500;
-    font-size: 1.5rem;
+    font-size: 1.1rem;
   }
 
   .revealed {
