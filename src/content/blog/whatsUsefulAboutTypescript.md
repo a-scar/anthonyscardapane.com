@@ -1,8 +1,9 @@
 ---
 title: What's useful about Typescript
-description: Why does this exist? 
+description: Exploring the purpose of Typescript
 publishDate: January 29, 2022
 id: 1
+tags: [typescript]
 ---
 
 Something important to understand right out of the gate is that Typescript is not an entirely different language than Javascript. If you take an error free .js file and change the extension to .ts the result of running the file will be equivalent. However, a .ts file is not a valid .js file. This is because Typescript is a superset of Javascript; which is a fancy way of saying it has all the language features of Javascript plus extra "stuff" specific to Typescript. All those "extra language features" Typescript provides would cause a Javascript program to have syntax errors. This will make a bit more sense shortly once we discuss what Typescript is actually doing with our code.
