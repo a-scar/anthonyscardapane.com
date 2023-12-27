@@ -7,6 +7,7 @@ const blogCollection = defineCollection({
     snippet: z.string().optional(),
     id: z.number(),
     isDraft: z.boolean().optional(),
+    tags: z.array(z.string()).optional(),
   }),
 });
 export const collections = {

@@ -4,6 +4,7 @@ description: Looking at Union Types and their use-cases
 publishDate: March 3, 2022
 id: 3
 snippet: Typescript can get a bit tricky as we start diving into some of the more advanced Types such as Unions, Intersections, and Mapped Types. This is when creating a solid foundation for how we think about Types can save a lot of frustration. A great way to think about how Types work, is to consider what the "domain" of a Type consists of.
+tags: [typescript]
 ---
 
 

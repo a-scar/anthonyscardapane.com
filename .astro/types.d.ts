@@ -198,6 +198,13 @@ declare module 'astro:content' {
 
 	type ContentEntryMap = {
 		"blog": {
+"angularChangeDetection.md": {
+	id: "angularChangeDetection.md";
+  slug: "angularchangedetection";
+  body: string;
+  collection: "blog";
+  data: InferEntrySchema<"blog">
+} & { render(): Render[".md"] };
 "fastBoats.md": {
 	id: "fastBoats.md";
   slug: "fastboats";
