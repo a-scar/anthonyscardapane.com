@@ -73,12 +73,12 @@
     }
 
     [data-tag="typescript"] {
-        background: url('public/assets/ts-logo-round-256.png');
+        background: url('/assets/ts-logo-round-256.png');
         background-size: cover;
     }
 
     [data-tag="angular"] {
-        background: url('public/assets/angular-logo.png');
+        background: url('/assets/angular-logo.png');
         background-size: cover;
     }
 </style>
