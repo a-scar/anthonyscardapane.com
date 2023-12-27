@@ -3,7 +3,7 @@
   --text-main: hsl(202, 27%, 14%);
   --text-secondary: hsl(204, 6%, 35%);
   --primary-color: hsl(230, 57%, 53%);
-  --secondary-color: hsla(300, 33%, 82%, 0.62);
+  --secondary-color: hsl(0deg, 20%, 95%);
   --font-family-serif: Merriweather, serif;
   --font-family-sans: 'Fira Sans', sans-serif;
 }
@@ -12,7 +12,7 @@
   --background-body: hsl(210, 3%, 13%);
   --text-main: hsl(0, 0%, 100%);
   --text-secondary: hsl(0, 0%, 80%);
-  --primary-color: hsl(153, 100%, 50%);
+  --primary-color: hsl(155, 71%, 75%);
   --secondary-color: #282A36;
 }
 
@@ -152,7 +152,7 @@ blockquote footer {
 
 .container {
   margin: 0 auto;
-  max-width: 42em;
+  max-width: 55em;
   width: 100%;
 }
 
