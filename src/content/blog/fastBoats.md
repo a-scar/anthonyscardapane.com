@@ -3,6 +3,7 @@ title: "Fast boat slow shore"
 description: A song I wrote
 publishDate: February 16, 2022
 id: 2
+isDraft: true
 ---
 
 <h2>fast boat, slow shore</h2>

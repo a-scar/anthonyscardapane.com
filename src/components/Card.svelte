@@ -13,12 +13,13 @@
     .card {
         display: flex;
         flex-direction: column;
-        height: 250px;
-        border-radius: 10px;
+        height: 150px;
+        border-radius: 5px;
         padding: 16px;
         box-shadow: 2px 4px 8px hsl(0deg 0% 0% / 0.25);
         transition: transform 200ms;
         background-color: var(--secondary-color);
+        margin-bottom: 10px;
     }
 
     a {
